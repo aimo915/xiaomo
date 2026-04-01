@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星空祝福 | 4.23生日快乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>生日快乐 | 4.23生日快乐</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -73,7 +73,8 @@
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
         .nav-link {
@@ -85,6 +86,7 @@
             transition: var(--transition);
             position: relative;
             cursor: pointer;
+            white-space: nowrap;
         }
         
         .nav-link:hover, .nav-link.active {
@@ -132,7 +134,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 60px 0;
+            padding: 40px 0;
         }
         
         .birthday-date {
@@ -150,7 +152,7 @@
         }
         
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             background: linear-gradient(to right, #ff6bcb, #8a2be2, #4a00e0);
             -webkit-background-clip: text;
             background-clip: text;
@@ -160,7 +162,7 @@
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 40px;
             line-height: 1.6;
@@ -191,7 +193,7 @@
             display: flex;
             justify-content: center;
             margin-top: 60px;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
         }
         
@@ -718,10 +720,58 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* 响应式设计 */
+        /* 横屏优化 */
+        @media screen and (orientation: landscape) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+                max-width: 90%;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .floating-elements {
+                gap: 20px;
+            }
+            
+            .floating-element {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .wishes-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+            
+            .countdown-item {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .countdown-value {
+                font-size: 2.8rem;
+            }
+            
+            .music-player {
+                max-width: 90%;
+            }
+        }
+        
+        /* 响应式设计 - 手机 */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .nav-links {
@@ -734,40 +784,69 @@
             }
             
             .countdown-item {
-                width: 120px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
             }
             
             .countdown-value {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .secret-content {
                 padding: 20px;
             }
+            
+            .music-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .music-cover {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
         }
         
-        @media (max-width: 576px) {
+        @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .floating-element {
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
+            }
+            
+            .floating-element i {
+                font-size: 1.8rem;
             }
             
             .countdown-box {
-                gap: 15px;
+                gap: 10px;
             }
             
             .countdown-item {
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
             }
             
             .countdown-value {
-                font-size: 2.2rem;
+                font-size: 2rem;
+            }
+            
+            .music-controls {
+                gap: 15px;
+            }
+            
+            .control-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .play-btn {
+                width: 60px;
+                height: 60px;
             }
         }
         
@@ -799,18 +878,29 @@
         .secret-link {
             display: none;
         }
+        
+        /* 音频播放器 */
+        .audio-player {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <!-- 粒子背景 -->
     <div class="particles" id="particles"></div>
     
+    <!-- 音频播放器 -->
+    <audio id="birthdayAudio" class="audio-player" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
+        您的浏览器不支持音频元素。
+    </audio>
+    
     <div class="container">
         <!-- 导航栏 -->
         <header>
             <div class="logo">
                 <i class="fas fa-birthday-cake"></i>
-                <span>星空祝福</span>
+                <span>生日快乐</span>
             </div>
             <nav class="nav-links">
                 <a class="nav-link active" data-page="home">首页</a>
@@ -828,7 +918,7 @@
             <div class="hero">
                 <div class="birthday-date">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>专属4月23日生日祝福</span>
+                    <span>梓怡同学专属4月23日生日祝福</span>
                 </div>
                 <h1>生日快乐！</h1>
                 <p>在这个特别的日子里，让漫天繁星为你点亮，让宇宙的旋律为你奏响。愿你的新一岁充满惊喜、欢乐与无限可能，每一天都如星辰般闪耀。</p>
@@ -944,8 +1034,8 @@
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="music-details">
-                            <h3 id="songTitle">生日快乐变奏曲</h3>
-                            <p id="artist">星空祝福专属</p>
+                            <h3 id="songTitle">生日快乐歌</h3>
+                            <p id="artist">经典生日祝福</p>
                             <p id="time">0:00 / 0:00</p>
                         </div>
                     </div>
@@ -970,7 +1060,7 @@
                 </div>
                 
                 <div style="margin-top: 40px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                    <div class="song-item" data-index="0" style="padding: 15px 25px; background: rgba(255,255,255,0.05); border-radius: 10px; cursor: pointer; transition: all 0.3s;">生日快乐变奏曲</div>
+                    <div class="song-item" data-index="0" style="padding: 15px 25px; background: rgba(255,255,255,0.05); border-radius: 10px; cursor: pointer; transition: all 0.3s;">生日快乐歌</div>
                     <div class="song-item" data-index="1" style="padding: 15px 25px; background: rgba(255,255,255,0.05); border-radius: 10px; cursor: pointer; transition: all 0.3s;">欢乐颂</div>
                     <div class="song-item" data-index="2" style="padding: 15px 25px; background: rgba(255,255,255,0.05); border-radius: 10px; cursor: pointer; transition: all 0.3s;">小星星变奏曲</div>
                 </div>
@@ -1025,7 +1115,7 @@
         <section id="secret" class="page">
             <div class="secret-container">
                 <h2>生日彩蛋 🎁</h2>
-                <p>这是一份只属于4月23日生日的你的特别礼物</p>
+                <p>这是一份只属于4月23日生日的梓怡同学的特别礼物</p>
                 
                 <div class="envelope" id="secretEnvelope">
                     <div class="envelope-text">点击打开</div>
@@ -1033,25 +1123,25 @@
                 
                 <div class="secret-content" id="secretContent">
                     <div class="secret-message">
-                        <h3>亲爱的你，</h3>
+                        <h3>梓怡同学，</h3>
                         <p>在你生日的这一天，我想对你说一些平时可能没有机会说出口的话。</p>
                         
                         <p>首先，我想告诉你，你是一个非常特别的人。你的笑容能点亮整个房间，你的善良能温暖每个人的心。每次看到你，我都觉得这个世界变得更加美好。</p>
                         
                         <h3>关于我们</h3>
-                        <p>这些年来，我一直在观察你，欣赏你，也从你身上学到了很多。你的坚韧、你的善良、你对生活的热爱，都深深影响着我。</p>
+                        <p>这些年来，我一直在观察你，欣赏你，也从你身上学到了很多。你的开朗、你的有趣、你的细腻和韧劲，都深深影响着我。</p>
                         
-                        <p>你知道吗？每次你遇到困难时，你总是能找到解决问题的方法。你的智慧和勇气让我敬佩。而当你成功时，你的谦逊和感恩之心更让我感动。</p>
+                        <p>你知道吗?我一直特别佩服你。不管遇到什么事，你都有自己的韧劲，总能把事情处理得很好。难得的是，你为人通透真诚，对朋友永远用心，相处起来特别舒服。跟你一起打麻将的日子，是我最放松、最开心的时光，你对我的好，我都记在心里。你真的超棒，做你自己就好。3</p>
                         
                         <h3>特别的祝福</h3>
                         <p>在这个特别的日子里，我希望你知道：</p>
                         <p>1. 你值得所有的美好和幸福</p>
                         <p>2. 你的梦想一定会实现</p>
-                        <p>3. 无论遇到什么困难，你都不是一个人</p>
+                        <p>3. 无论遇到什么困难，你要相信自己一定可以</p>
                         <p>4. 每一天都要记得爱自己</p>
-                        
+                        <p>5. 不要给自己太大压力，你是独一无二的<p>
                         <h3>最后的悄悄话</h3>
-                        <p>其实，我一直在你身边，默默地支持你，为你加油。无论你需要什么，我都会尽力帮助你。因为对我来说，你的幸福就是最重要的事。</p>
+                        <p>其实，我一直在你身边，默默地支持你，为你加油。无论你需要什么，我都会尽力帮助你。因为对我来说，你的开心就是最重要的事。</p>
                         
                         <p>愿你的新一岁，充满意想不到的惊喜，遇见更好的自己，收获更多的爱与温暖。</p>
                         
@@ -1064,7 +1154,7 @@
         </section>
         
         <footer class="footer">
-            <p>© 2026 星空祝福 | 专为4月23日生日特别设计 | 愿你的每一天都如星辰般闪耀</p>
+            <p>© 2026 呃 | 专为4月23日生日的你特别设计 | 愿你的每一天都如星辰般闪耀</p>
         </footer>
     </div>
 
@@ -1269,7 +1359,8 @@
             updateCountdown();
             setInterval(updateCountdown, 1000);
             
-            // 音乐播放器功能
+            // 音乐播放器功能 - 使用真实的音频
+            const audio = document.getElementById('birthdayAudio');
             const playBtn = document.getElementById('playBtn');
             const playIcon = document.getElementById('playIcon');
             const prevBtn = document.getElementById('prevBtn');
@@ -1282,38 +1373,39 @@
             const timeDisplay = document.getElementById('time');
             const songItems = document.querySelectorAll('.song-item');
             
-            // 模拟音乐数据
+            // 音乐数据
             const songs = [
                 {
-                    title: "生日快乐变奏曲",
-                    artist: "星空祝福专属",
-                    duration: 120
+                    title: "生日快乐歌",
+                    artist: "经典生日祝福",
+                    src: "https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3"
                 },
                 {
                     title: "欢乐颂",
                     artist: "贝多芬",
-                    duration: 150
+                    src: "https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3"
                 },
                 {
                     title: "小星星变奏曲",
                     artist: "莫扎特",
-                    duration: 180
+                    src: "https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3"
                 }
             ];
             
             let currentSongIndex = 0;
             let isPlaying = false;
-            let currentTime = 0;
-            let progressInterval;
             
             // 加载歌曲
             function loadSong(index) {
                 currentSongIndex = index;
                 const song = songs[index];
                 
+                // 设置音频源
+                audio.src = song.src;
+                
+                // 更新界面信息
                 songTitle.textContent = song.title;
                 artist.textContent = song.artist;
-                timeDisplay.textContent = `0:00 / ${formatTime(song.duration)}`;
                 
                 // 更新激活的歌曲项
                 songItems.forEach((item, i) => {
@@ -1326,13 +1418,12 @@
                     }
                 });
                 
-                // 重置进度
-                progress.style.width = '0%';
-                currentTime = 0;
-                
-                // 如果正在播放，继续播放
+                // 如果之前正在播放，继续播放
                 if (isPlaying) {
                     playSong();
+                } else {
+                    // 否则重置时间显示
+                    timeDisplay.textContent = "0:00 / 0:00";
                 }
             }
             
@@ -1341,6 +1432,15 @@
                 const mins = Math.floor(seconds / 60);
                 const secs = Math.floor(seconds % 60);
                 return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+            
+            // 更新进度条和时间显示
+            function updateProgress() {
+                if (audio.duration) {
+                    const percent = (audio.currentTime / audio.duration) * 100;
+                    progress.style.width = `${percent}%`;
+                    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+                }
             }
             
             // 播放/暂停歌曲
@@ -1359,19 +1459,12 @@
                 playIcon.classList.add('fa-pause');
                 musicCover.classList.add('playing');
                 
-                // 模拟播放进度
-                clearInterval(progressInterval);
-                progressInterval = setInterval(() => {
-                    if (currentTime < songs[currentSongIndex].duration) {
-                        currentTime++;
-                        const percent = (currentTime / songs[currentSongIndex].duration) * 100;
-                        progress.style.width = `${percent}%`;
-                        timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(songs[currentSongIndex].duration)}`;
-                    } else {
-                        // 歌曲结束，播放下一首
-                        nextSong();
-                    }
-                }, 1000);
+                // 播放音频
+                audio.play().catch(e => {
+                    console.log("音频播放失败:", e);
+                    // 如果自动播放被阻止，显示提示
+                    alert("请点击页面任意位置以启用音频播放");
+                });
             }
             
             // 暂停歌曲
@@ -1380,7 +1473,7 @@
                 playIcon.classList.remove('fa-pause');
                 playIcon.classList.add('fa-play');
                 musicCover.classList.remove('playing');
-                clearInterval(progressInterval);
+                audio.pause();
             }
             
             // 下一首歌曲
@@ -1408,9 +1501,9 @@
                 const percent = (clickX / width) * 100;
                 progress.style.width = `${percent}%`;
                 
-                const songDuration = songs[currentSongIndex].duration;
-                currentTime = (percent / 100) * songDuration;
-                timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(songDuration)}`;
+                if (audio.duration) {
+                    audio.currentTime = (percent / 100) * audio.duration;
+                }
                 
                 // 回弹效果
                 this.style.transform = 'scale(0.95)';
@@ -1424,6 +1517,10 @@
             prevBtn.addEventListener('click', prevSong);
             nextBtn.addEventListener('click', nextSong);
             progressContainer.addEventListener('click', setProgress);
+            
+            // 音频事件监听
+            audio.addEventListener('timeupdate', updateProgress);
+            audio.addEventListener('ended', nextSong);
             
             // 歌曲项点击事件
             songItems.forEach((item, index) => {
@@ -1450,7 +1547,7 @@
             
             // 示例留言
             const sampleMessages = [
-                { sender: "星空使者", time: "2026-04-20 10:30", text: "生日快乐！愿你的每一天都充满阳光和欢笑！" },
+                { sender: "小默", time: "2026-04-20 10:30", text: "生日快乐！愿你的每一天都充满阳光和欢笑！" },
                 { sender: "星辰守护者", time: "2026-04-21 14:22", text: "在这特别的日子里，送上我最真挚的祝福，愿你梦想成真！" },
                 { sender: "月光精灵", time: "2026-04-22 09:15", text: "愿你的新一岁，如星空般璀璨，如月光般温柔！" }
             ];
@@ -1595,6 +1692,18 @@
                     }, 200);
                 });
             });
+            
+            // 页面点击事件，解决音频自动播放问题
+            document.body.addEventListener('click', function() {
+                // 如果音频是暂停状态，尝试播放一下然后暂停
+                if (audio.paused && !isPlaying) {
+                    audio.play().then(() => {
+                        audio.pause();
+                    }).catch(e => {
+                        console.log("音频预加载失败:", e);
+                    });
+                }
+            }, { once: true });
         });
         
         // 页面加载时的动画
