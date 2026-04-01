@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>生日快乐 | 4.23生日快乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梓怡专属生日祝福 | 4.23生日快乐</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -45,7 +45,6 @@
             padding: 20px;
         }
         
-        /* 头部导航 */
         header {
             display: flex;
             justify-content: space-between;
@@ -111,7 +110,6 @@
             width: 70%;
         }
         
-        /* 主页面 */
         .page {
             display: none;
             min-height: 80vh;
@@ -127,7 +125,6 @@
             transform: translateY(0);
         }
         
-        /* 首页 */
         .hero {
             display: flex;
             flex-direction: column;
@@ -232,7 +229,6 @@
             box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
         }
         
-        /* 祝福页面 */
         .wishes-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -274,7 +270,6 @@
             color: var(--primary-color);
         }
         
-        /* 倒计时页面 */
         .countdown-container {
             display: flex;
             flex-direction: column;
@@ -332,7 +327,6 @@
             margin-top: 10px;
         }
         
-        /* 音乐页面 */
         .music-container {
             display: flex;
             flex-direction: column;
@@ -436,7 +430,6 @@
             transition: width 0.1s linear;
         }
         
-        /* 留言页面 */
         .message-container {
             max-width: 800px;
             margin: 0 auto;
@@ -532,7 +525,6 @@
             font-size: 0.9rem;
         }
         
-        /* 秘密页面 */
         .secret-container {
             display: flex;
             flex-direction: column;
@@ -554,30 +546,6 @@
             margin-bottom: 30px;
             animation: pulse 2s infinite;
             cursor: pointer;
-        }
-        
-        .secret-input-container {
-            display: none;
-            margin-top: 30px;
-            width: 100%;
-            max-width: 500px;
-        }
-        
-        .secret-input {
-            width: 100%;
-            padding: 15px 20px;
-            font-size: 1.2rem;
-            border-radius: 10px;
-            border: 2px solid var(--accent-color);
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .secret-input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3);
         }
         
         .secret-content {
@@ -656,7 +624,6 @@
             font-size: 1.2rem;
         }
         
-        /* 生日检查页面 */
         .birthday-check {
             display: flex;
             flex-direction: column;
@@ -697,7 +664,114 @@
             box-shadow: 0 15px 30px rgba(138, 43, 226, 0.4);
         }
         
-        /* 动画 */
+        /* 新增：密码通道和图片页面样式 */
+        .private-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .password-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin-top: 30px;
+        }
+        
+        .password-input {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .password-input input {
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+        }
+        
+        .password-input input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3);
+        }
+        
+        .private-content {
+            display: none;
+            max-width: 800px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .private-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .private-img-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .private-img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .img-caption {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-style: italic;
+        }
+        
+        .private-text {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.8;
+        }
+        
+        .private-text h3 {
+            color: var(--accent-color);
+            margin: 20px 0 10px;
+        }
+        
+        .private-text p {
+            margin-bottom: 15px;
+        }
+        
+        .password-hint {
+            color: #d0d0ff;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .password-error {
+            color: #ff4757;
+            margin-top: 10px;
+            display: none;
+        }
+        
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
@@ -720,7 +794,6 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* 横屏优化 */
         @media screen and (orientation: landscape) {
             .hero h1 {
                 font-size: 3rem;
@@ -768,7 +841,6 @@
             }
         }
         
-        /* 响应式设计 - 手机 */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -792,7 +864,7 @@
                 font-size: 2.5rem;
             }
             
-            .secret-content {
+            .secret-content, .private-text {
                 padding: 20px;
             }
             
@@ -804,6 +876,10 @@
             .music-cover {
                 margin-right: 0;
                 margin-bottom: 20px;
+            }
+            
+            .private-images {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -850,7 +926,6 @@
             }
         }
         
-        /* 粒子效果样式 */
         .particle {
             position: absolute;
             border-radius: 50%;
@@ -867,40 +942,58 @@
             margin-top: 60px;
         }
         
-        /* 生日彩蛋按钮样式 */
         .secret-nav-btn {
             background: linear-gradient(45deg, #ff6bcb, #ffd166);
             color: var(--dark-color);
             font-weight: bold;
         }
         
-        /* 隐藏秘密页面链接 */
         .secret-link {
             display: none;
         }
         
-        /* 音频播放器 */
         .audio-player {
             display: none;
+        }
+        
+        .birthday-notice {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: slideInRight 0.5s ease;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <!-- 粒子背景 -->
     <div class="particles" id="particles"></div>
     
-    <!-- 音频播放器 -->
-    <audio id="birthdayAudio" class="audio-player" loop>
+    <audio id="birthdayAudio" class="audio-player">
         <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
         您的浏览器不支持音频元素。
     </audio>
     
+    <div id="birthdayNotice" class="birthday-notice">
+        🎉 今天是你的生日！可以查看生日彩蛋了！ 🎉
+    </div>
+    
     <div class="container">
-        <!-- 导航栏 -->
         <header>
             <div class="logo">
                 <i class="fas fa-birthday-cake"></i>
-                <span>生日快乐</span>
+                <span>梓怡专属生日祝福</span>
             </div>
             <nav class="nav-links">
                 <a class="nav-link active" data-page="home">首页</a>
@@ -908,12 +1001,12 @@
                 <a class="nav-link" data-page="countdown">生日倒计时</a>
                 <a class="nav-link" data-page="music">生日音乐</a>
                 <a class="nav-link" data-page="message">生日留言</a>
-                <!-- 生日当天才会显示的秘密页面链接 -->
+                <!-- 新增：私人相册链接 -->
+                <a class="nav-link" data-page="private">私人相册</a>
                 <a class="nav-link secret-link secret-nav-btn" data-page="secret" id="secretLink">生日彩蛋</a>
             </nav>
         </header>
         
-        <!-- 首页 -->
         <section id="home" class="page active">
             <div class="hero">
                 <div class="birthday-date">
@@ -941,7 +1034,6 @@
             </div>
         </section>
         
-        <!-- 祝福页面 -->
         <section id="wishes" class="page">
             <div class="hero">
                 <h2>生日祝福</h2>
@@ -987,7 +1079,6 @@
             </div>
         </section>
         
-        <!-- 倒计时页面 -->
         <section id="countdown" class="page">
             <div class="countdown-container">
                 <h2 class="countdown-title">生日倒计时</h2>
@@ -1022,7 +1113,6 @@
             </div>
         </section>
         
-        <!-- 音乐页面 -->
         <section id="music" class="page">
             <div class="music-container">
                 <h2>生日音乐</h2>
@@ -1037,6 +1127,7 @@
                             <h3 id="songTitle">生日快乐歌</h3>
                             <p id="artist">经典生日祝福</p>
                             <p id="time">0:00 / 0:00</p>
+                            <p id="audioStatus" style="color: #ff6bcb; font-size: 0.9rem; margin-top: 5px;">点击播放按钮开始播放</p>
                         </div>
                     </div>
                     
@@ -1067,7 +1158,6 @@
             </div>
         </section>
         
-        <!-- 留言页面 -->
         <section id="message" class="page">
             <div class="message-container">
                 <h2 style="text-align: center;">生日留言</h2>
@@ -1088,12 +1178,87 @@
                 </div>
                 
                 <div class="message-display" id="messageDisplay">
-                    <!-- 留言将动态显示在这里 -->
+                    <div class="message-item">
+                        <div class="message-header">
+                            <div class="message-sender">小默</div>
+                            <div class="message-time">2026-04-20 10:30</div>
+                        </div>
+                        <div class="message-text">生日快乐！愿你的每一天都充满阳光和欢笑！</div>
+                    </div>
+                    <div class="message-item">
+                        <div class="message-header">
+                            <div class="message-sender">星辰守护者</div>
+                            <div class="message-time">2026-04-21 14:22</div>
+                        </div>
+                        <div class="message-text">在这特别的日子里，送上我最真挚的祝福，愿你梦想成真！</div>
+                    </div>
+                    <div class="message-item">
+                        <div class="message-header">
+                            <div class="message-sender">月光精灵</div>
+                            <div class="message-time">2026-04-22 09:15</div>
+                        </div>
+                        <div class="message-text">愿你的新一岁，如星空般璀璨，如月光般温柔！</div>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <!-- 生日检查页面（默认隐藏） -->
+        <!-- 新增：私人相册页面（需要密码进入） -->
+        <section id="private" class="page">
+            <div class="private-container">
+                <h2>私人相册 📸</h2>
+                <p>这里保存着一些特别的瞬间，需要密码才能查看</p>
+                
+                <!-- 密码输入部分 -->
+                <div class="password-section" id="passwordSection">
+                    <div class="password-input">
+                        <input type="password" id="privatePassword" placeholder="请输入密码">
+                        <button class="submit-btn" id="submitPrivatePassword">进入相册</button>
+                        <p class="password-hint">提示：密码是我们的特殊日子（8位数字）</p>
+                        <p class="password-error" id="passwordError">密码错误，请重试</p>
+                    </div>
+                </div>
+                
+                <!-- 私人内容，初始隐藏 -->
+                <div class="private-content" id="privateContent">
+                    <h3 style="text-align: center; margin-bottom: 30px; color: var(--accent-color);">珍贵的回忆</h3>
+                    
+                    <div class="private-images">
+                        <div class="private-img-container">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2YmNiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOHB4IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPjE6IPCfkrDwn5Kw8J+SsDwvdGV4dD48L3N2Zz4=" 
+                                 alt="梓怡的照片" class="private-img" id="privateImg1">
+                            <p class="img-caption">温柔的瞬间</p>
+                            <p style="color: #d0d0ff; margin-top: 10px; font-size: 0.9rem;">温柔的微笑，如春日暖阳</p>
+                        </div>
+                        
+                        <div class="private-img-container">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjOGEyYmV5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOHB4IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPjI6IPCfkY/wn5GP8J+RkDwvdGV4dD48L3N2Zz4=" 
+                                 alt="梓怡的照片" class="private-img" id="privateImg2">
+                            <p class="img-caption">俏皮的时刻</p>
+                            <p style="color: #d0d0ff; margin-top: 10px; font-size: 0.9rem;">俏皮可爱，充满活力</p>
+                        </div>
+                    </div>
+                    
+                    <div class="private-text">
+                        <h3>给梓怡的话</h3>
+                        <p>看到这些照片，就想起你温柔的笑容和俏皮的样子。每一张照片都记录着一个美好的瞬间，每一次回忆都让人心生温暖。</p>
+                        
+                        <p>第一张照片里，你温柔地微笑着，眼神明亮，让人感到无比的亲切和温暖。每次看到这张照片，都能感受到你的善良和美好。</p>
+                        
+                        <p>第二张照片中，你戴着可爱的熊耳帽子，俏皮地抵住脸颊，背景是美食街的热闹景象。这张照片展现了你的活泼和可爱，总能给人带来欢乐。</p>
+                        
+                        <h3>特别的祝福</h3>
+                        <p>在你的生日之际，我想对你说：</p>
+                        <p>愿你永远保持这份温柔与俏皮，愿你的生活如这些照片一样，充满色彩和欢乐。无论未来怎样，都请记得，有一个人一直在默默关心你、祝福你。</p>
+                        
+                        <p>生日快乐，愿你被世界温柔以待，愿你的每一天都如星辰般璀璨，如阳光般明媚。</p>
+                        
+                        <p style="text-align: right; margin-top: 30px; font-style: italic;">—— 珍藏这些回忆的人 💫</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="birthday-check" class="page">
             <div class="birthday-check">
                 <div class="birthday-check-icon">
@@ -1102,16 +1267,13 @@
                 <h2>生日验证</h2>
                 <p class="birthday-check-message">今天是你的生日吗？这个页面只有在4月23日生日当天才能访问。</p>
                 
-                <div id="birthdayCheckResult">
-                    <!-- 验证结果将显示在这里 -->
-                </div>
+                <div id="birthdayCheckResult"></div>
                 
                 <button class="birthday-check-btn" id="checkBirthdayBtn">验证生日日期</button>
                 <button class="birthday-check-btn" id="secretAccessBtn" style="display: none; background: linear-gradient(45deg, #ff6bcb, #ffd166); color: #0f0c29;">进入生日彩蛋</button>
             </div>
         </section>
         
-        <!-- 秘密页面（生日当天专属） -->
         <section id="secret" class="page">
             <div class="secret-container">
                 <h2>生日彩蛋 🎁</h2>
@@ -1131,7 +1293,7 @@
                         <h3>关于我们</h3>
                         <p>这些年来，我一直在观察你，欣赏你，也从你身上学到了很多。你的开朗、你的有趣、你的细腻和韧劲，都深深影响着我。</p>
                         
-                        <p>你知道吗?我一直特别佩服你。不管遇到什么事，你都有自己的韧劲，总能把事情处理得很好。难得的是，你为人通透真诚，对朋友永远用心，相处起来特别舒服。跟你一起打麻将的日子，是我最放松、最开心的时光，你对我的好，我都记在心里。你真的超棒，做你自己就好。3</p>
+                        <p>你知道吗？我一直特别佩服你。不管遇到什么事，你都有自己的韧劲，总能把事情处理得很好。难得的是，你为人通透真诚，对朋友永远用心，相处起来特别舒服。跟你一起打麻将的日子，是我最放松、最开心的时光，你对我的好，我都记在心里。你真的超棒，做你自己就好。</p>
                         
                         <h3>特别的祝福</h3>
                         <p>在这个特别的日子里，我希望你知道：</p>
@@ -1139,7 +1301,8 @@
                         <p>2. 你的梦想一定会实现</p>
                         <p>3. 无论遇到什么困难，你要相信自己一定可以</p>
                         <p>4. 每一天都要记得爱自己</p>
-                        <p>5. 不要给自己太大压力，你是独一无二的<p>
+                        <p>5. 不要给自己太大压力，你是独一无二的</p>
+                        
                         <h3>最后的悄悄话</h3>
                         <p>其实，我一直在你身边，默默地支持你，为你加油。无论你需要什么，我都会尽力帮助你。因为对我来说，你的开心就是最重要的事。</p>
                         
@@ -1154,73 +1317,75 @@
         </section>
         
         <footer class="footer">
-            <p>© 2026 呃 | 专为4月23日生日的你特别设计 | 愿你的每一天都如星辰般闪耀</p>
+            <p>© 2026 星空祝福 | 专为4月23日生日的梓怡同学特别设计 | 愿你的每一天都如星辰般闪耀</p>
         </footer>
     </div>
 
     <script>
-        // 粒子背景效果
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // 随机大小
-                const size = Math.random() * 5 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // 随机位置
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                
-                // 随机透明度
-                particle.style.opacity = Math.random() * 0.5 + 0.2;
-                
-                // 随机颜色
-                const colors = ['#ff6bcb', '#8a2be2', '#4a00e0', '#ffd166'];
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                
-                particlesContainer.appendChild(particle);
-                
-                // 添加浮动动画
-                animateParticle(particle);
-            }
-        }
-        
-        function animateParticle(particle) {
-            let x = parseFloat(particle.style.left);
-            let y = parseFloat(particle.style.top);
-            let xSpeed = (Math.random() - 0.5) * 0.5;
-            let ySpeed = (Math.random() - 0.5) * 0.5;
-            
-            function moveParticle() {
-                x += xSpeed;
-                y += ySpeed;
-                
-                // 边界检测
-                if (x < 0 || x > 100) xSpeed = -xSpeed;
-                if (y < 0 || y > 100) ySpeed = -ySpeed;
-                
-                particle.style.left = `${x}%`;
-                particle.style.top = `${y}%`;
-                
-                requestAnimationFrame(moveParticle);
-            }
-            
-            moveParticle();
-        }
-        
-        // 检查今天是否是4月23日
+        // 修复的日期检查函数
         function isBirthdayToday() {
             const today = new Date();
             const month = today.getMonth() + 1; // 月份从0开始，所以要+1
             const date = today.getDate();
             
+            // 调试信息
+            console.log(`当前日期: ${month}月${date}日`);
+            console.log(`是否是4月23日: ${month === 4 && date === 23}`);
+            
             return month === 4 && date === 23;
+        }
+        
+        // 修复的倒计时函数
+        function updateCountdown() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            
+            // 设置今年的4月23日
+            const currentBirthday = new Date(currentYear, 3, 23); // 月份从0开始，所以3表示4月
+            
+            // 设置下一个4月23日
+            let nextBirthday = new Date(currentYear, 3, 23);
+            
+            // 如果今天已经过了今年的生日（不包括今天），设置为明年
+            if (now > currentBirthday) {
+                nextBirthday.setFullYear(currentYear + 1);
+            }
+            
+            const diff = nextBirthday - now;
+            
+            const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+            const hours = Math.max(0, Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            const minutes = Math.max(0, Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)));
+            const seconds = Math.max(0, Math.floor((diff % (1000 * 60)) / 1000));
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            // 如果是生日当天，显示特殊状态
+            if (isBirthdayToday()) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                
+                // 显示生日通知
+                const birthdayNotice = document.getElementById('birthdayNotice');
+                birthdayNotice.style.display = 'block';
+                setTimeout(() => {
+                    birthdayNotice.style.display = 'none';
+                }, 5000);
+            }
+            
+            // 添加回弹效果
+            const countdownItems = document.querySelectorAll('.countdown-item');
+            countdownItems.forEach(item => {
+                item.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    item.style.transform = 'scale(1)';
+                }, 300);
+            });
         }
         
         // 检查并更新秘密页面的可访问性
@@ -1231,490 +1396,15 @@
             if (isBirthday) {
                 // 如果是生日，显示秘密页面链接
                 secretLink.style.display = 'block';
+                console.log('今天是生日，显示彩蛋链接');
             } else {
                 // 如果不是生日，隐藏秘密页面链接
                 secretLink.style.display = 'none';
+                console.log('今天不是生日，隐藏彩蛋链接');
             }
         }
         
-        // 页面切换功能
-        document.addEventListener('DOMContentLoaded', function() {
-            // 创建粒子背景
-            createParticles();
-            
-            // 检查并更新秘密页面的可访问性
-            checkAndUpdateSecretAccess();
-            
-            // 页面切换
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const pageId = this.getAttribute('data-page');
-                    
-                    // 特殊处理：如果是秘密页面链接
-                    if (pageId === 'secret') {
-                        // 检查是否是生日
-                        if (!isBirthdayToday()) {
-                            // 如果不是生日，跳转到生日检查页面
-                            navLinks.forEach(l => l.classList.remove('active'));
-                            pages.forEach(page => page.classList.remove('active'));
-                            
-                            // 激活生日检查页面
-                            document.getElementById('birthday-check').classList.add('active');
-                            this.classList.remove('active');
-                            
-                            // 显示提示
-                            document.getElementById('birthdayCheckResult').innerHTML = `
-                                <div style="background: rgba(255,107,203,0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
-                                    <h3 style="color: var(--accent-color);">抱歉，今天不是4月23日</h3>
-                                    <p>这个页面只能在你的生日（4月23日）当天访问。</p>
-                                    <p>请等到你的生日再来打开这份特别的礼物吧！</p>
-                                </div>
-                            `;
-                            
-                            document.getElementById('secretAccessBtn').style.display = 'none';
-                            
-                            return;
-                        } else {
-                            // 如果是生日，显示秘密页面
-                            navLinks.forEach(l => l.classList.remove('active'));
-                            pages.forEach(page => page.classList.remove('active'));
-                            
-                            this.classList.add('active');
-                            document.getElementById(pageId).classList.add('active');
-                        }
-                    } else {
-                        // 普通页面切换
-                        navLinks.forEach(l => l.classList.remove('active'));
-                        pages.forEach(page => page.classList.remove('active'));
-                        
-                        this.classList.add('active');
-                        document.getElementById(pageId).classList.add('active');
-                    }
-                    
-                    // 添加回弹效果
-                    this.style.transform = 'scale(0.9)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 200);
-                });
-            });
-            
-            // 探索按钮
-            document.getElementById('exploreBtn').addEventListener('click', function() {
-                // 切换到祝福页面
-                navLinks.forEach(l => l.classList.remove('active'));
-                pages.forEach(page => page.classList.remove('active'));
-                
-                document.querySelector('.nav-link[data-page="wishes"]').classList.add('active');
-                document.getElementById('wishes').classList.add('active');
-                
-                // 按钮回弹效果
-                this.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 200);
-            });
-            
-            // 倒计时功能
-            function updateCountdown() {
-                const now = new Date();
-                const currentYear = now.getFullYear();
-                
-                // 设置下一个4月23日
-                let nextBirthday = new Date(currentYear, 3, 23); // 月份从0开始，所以3表示4月
-                
-                // 如果今年生日已过，设置为明年
-                if (now > nextBirthday) {
-                    nextBirthday.setFullYear(currentYear + 1);
-                }
-                
-                const diff = nextBirthday - now;
-                
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                
-                document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-                
-                // 添加回弹效果
-                const countdownItems = document.querySelectorAll('.countdown-item');
-                countdownItems.forEach(item => {
-                    item.style.transform = 'scale(1.1)';
-                    setTimeout(() => {
-                        item.style.transform = 'scale(1)';
-                    }, 300);
-                });
-            }
-            
-            // 初始化倒计时
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-            
-            // 音乐播放器功能 - 使用真实的音频
-            const audio = document.getElementById('birthdayAudio');
-            const playBtn = document.getElementById('playBtn');
-            const playIcon = document.getElementById('playIcon');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const progress = document.getElementById('progress');
-            const progressContainer = document.getElementById('progressContainer');
-            const musicCover = document.getElementById('musicCover');
-            const songTitle = document.getElementById('songTitle');
-            const artist = document.getElementById('artist');
-            const timeDisplay = document.getElementById('time');
-            const songItems = document.querySelectorAll('.song-item');
-            
-            // 音乐数据
-            const songs = [
-                {
-                    title: "生日快乐歌",
-                    artist: "经典生日祝福",
-                    src: "https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3"
-                },
-                {
-                    title: "欢乐颂",
-                    artist: "贝多芬",
-                    src: "https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3"
-                },
-                {
-                    title: "小星星变奏曲",
-                    artist: "莫扎特",
-                    src: "https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3"
-                }
-            ];
-            
-            let currentSongIndex = 0;
-            let isPlaying = false;
-            
-            // 加载歌曲
-            function loadSong(index) {
-                currentSongIndex = index;
-                const song = songs[index];
-                
-                // 设置音频源
-                audio.src = song.src;
-                
-                // 更新界面信息
-                songTitle.textContent = song.title;
-                artist.textContent = song.artist;
-                
-                // 更新激活的歌曲项
-                songItems.forEach((item, i) => {
-                    if (i === index) {
-                        item.style.background = 'rgba(138, 43, 226, 0.3)';
-                        item.style.boxShadow = '0 5px 15px rgba(138, 43, 226, 0.3)';
-                    } else {
-                        item.style.background = 'rgba(255,255,255,0.05)';
-                        item.style.boxShadow = 'none';
-                    }
-                });
-                
-                // 如果之前正在播放，继续播放
-                if (isPlaying) {
-                    playSong();
-                } else {
-                    // 否则重置时间显示
-                    timeDisplay.textContent = "0:00 / 0:00";
-                }
-            }
-            
-            // 格式化时间
-            function formatTime(seconds) {
-                const mins = Math.floor(seconds / 60);
-                const secs = Math.floor(seconds % 60);
-                return `${mins}:${secs.toString().padStart(2, '0')}`;
-            }
-            
-            // 更新进度条和时间显示
-            function updateProgress() {
-                if (audio.duration) {
-                    const percent = (audio.currentTime / audio.duration) * 100;
-                    progress.style.width = `${percent}%`;
-                    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
-                }
-            }
-            
-            // 播放/暂停歌曲
-            function togglePlay() {
-                if (isPlaying) {
-                    pauseSong();
-                } else {
-                    playSong();
-                }
-            }
-            
-            // 播放歌曲
-            function playSong() {
-                isPlaying = true;
-                playIcon.classList.remove('fa-play');
-                playIcon.classList.add('fa-pause');
-                musicCover.classList.add('playing');
-                
-                // 播放音频
-                audio.play().catch(e => {
-                    console.log("音频播放失败:", e);
-                    // 如果自动播放被阻止，显示提示
-                    alert("请点击页面任意位置以启用音频播放");
-                });
-            }
-            
-            // 暂停歌曲
-            function pauseSong() {
-                isPlaying = false;
-                playIcon.classList.remove('fa-pause');
-                playIcon.classList.add('fa-play');
-                musicCover.classList.remove('playing');
-                audio.pause();
-            }
-            
-            // 下一首歌曲
-            function nextSong() {
-                currentSongIndex = (currentSongIndex + 1) % songs.length;
-                loadSong(currentSongIndex);
-                if (isPlaying) {
-                    playSong();
-                }
-            }
-            
-            // 上一首歌曲
-            function prevSong() {
-                currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-                loadSong(currentSongIndex);
-                if (isPlaying) {
-                    playSong();
-                }
-            }
-            
-            // 设置进度
-            function setProgress(e) {
-                const width = this.clientWidth;
-                const clickX = e.offsetX;
-                const percent = (clickX / width) * 100;
-                progress.style.width = `${percent}%`;
-                
-                if (audio.duration) {
-                    audio.currentTime = (percent / 100) * audio.duration;
-                }
-                
-                // 回弹效果
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 200);
-            }
-            
-            // 事件监听
-            playBtn.addEventListener('click', togglePlay);
-            prevBtn.addEventListener('click', prevSong);
-            nextBtn.addEventListener('click', nextSong);
-            progressContainer.addEventListener('click', setProgress);
-            
-            // 音频事件监听
-            audio.addEventListener('timeupdate', updateProgress);
-            audio.addEventListener('ended', nextSong);
-            
-            // 歌曲项点击事件
-            songItems.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    loadSong(index);
-                    if (!isPlaying) {
-                        playSong();
-                    }
-                    
-                    // 回弹效果
-                    item.style.transform = 'scale(0.9)';
-                    setTimeout(() => {
-                        item.style.transform = 'scale(1)';
-                    }, 200);
-                });
-            });
-            
-            // 初始化第一首歌
-            loadSong(0);
-            
-            // 留言功能
-            const messageForm = document.querySelector('.message-form');
-            const messageDisplay = document.getElementById('messageDisplay');
-            
-            // 示例留言
-            const sampleMessages = [
-                { sender: "小默", time: "2026-04-20 10:30", text: "生日快乐！愿你的每一天都充满阳光和欢笑！" },
-                { sender: "星辰守护者", time: "2026-04-21 14:22", text: "在这特别的日子里，送上我最真挚的祝福，愿你梦想成真！" },
-                { sender: "月光精灵", time: "2026-04-22 09:15", text: "愿你的新一岁，如星空般璀璨，如月光般温柔！" }
-            ];
-            
-            // 显示示例留言
-            function displayMessages() {
-                messageDisplay.innerHTML = '';
-                
-                sampleMessages.forEach(msg => {
-                    const messageEl = document.createElement('div');
-                    messageEl.className = 'message-item';
-                    messageEl.innerHTML = `
-                        <div class="message-header">
-                            <div class="message-sender">${msg.sender}</div>
-                            <div class="message-time">${msg.time}</div>
-                        </div>
-                        <div class="message-text">${msg.text}</div>
-                    `;
-                    messageDisplay.appendChild(messageEl);
-                });
-            }
-            
-            // 提交新留言
-            document.getElementById('submitMessage').addEventListener('click', function() {
-                const senderName = document.getElementById('senderName').value.trim();
-                const messageText = document.getElementById('messageText').value.trim();
-                
-                if (!senderName || !messageText) {
-                    alert('请填写完整的发送人和留言内容！');
-                    return;
-                }
-                
-                // 获取当前时间
-                const now = new Date();
-                const timeString = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
-                
-                // 创建新留言
-                const newMessage = {
-                    sender: senderName,
-                    time: timeString,
-                    text: messageText
-                };
-                
-                // 添加到显示
-                const messageEl = document.createElement('div');
-                messageEl.className = 'message-item';
-                messageEl.innerHTML = `
-                    <div class="message-header">
-                        <div class="message-sender">${newMessage.sender}</div>
-                        <div class="message-time">${newMessage.time}</div>
-                    </div>
-                    <div class="message-text">${newMessage.text}</div>
-                `;
-                messageDisplay.insertBefore(messageEl, messageDisplay.firstChild);
-                
-                // 清空表单
-                document.getElementById('senderName').value = '';
-                document.getElementById('messageText').value = '';
-                
-                // 显示成功消息
-                alert('留言发送成功！你的祝福已加入星空。');
-                
-                // 回弹效果
-                this.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 200);
-            });
-            
-            // 初始化留言
-            displayMessages();
-            
-            // 生日检查功能
-            document.getElementById('checkBirthdayBtn').addEventListener('click', function() {
-                const isBirthday = isBirthdayToday();
-                const resultDiv = document.getElementById('birthdayCheckResult');
-                const secretAccessBtn = document.getElementById('secretAccessBtn');
-                
-                if (isBirthday) {
-                    resultDiv.innerHTML = `
-                        <div style="background: rgba(107,255,131,0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
-                            <h3 style="color: #6bff83;">🎉 生日快乐！ 🎉</h3>
-                            <p>今天确实是4月23日，你的生日！</p>
-                            <p>现在你可以进入生日彩蛋页面，查看特别为你准备的信息。</p>
-                        </div>
-                    `;
-                    secretAccessBtn.style.display = 'inline-block';
-                } else {
-                    resultDiv.innerHTML = `
-                        <div style="background: rgba(255,107,203,0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
-                            <h3 style="color: var(--accent-color);">抱歉，今天不是4月23日</h3>
-                            <p>这个页面只能在你的生日（4月23日）当天访问。</p>
-                            <p>请等到你的生日再来打开这份特别的礼物吧！</p>
-                        </div>
-                    `;
-                    secretAccessBtn.style.display = 'none';
-                }
-                
-                // 回弹效果
-                this.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 200);
-            });
-            
-            // 秘密访问按钮
-            document.getElementById('secretAccessBtn').addEventListener('click', function() {
-                // 切换到秘密页面
-                navLinks.forEach(l => l.classList.remove('active'));
-                pages.forEach(page => page.classList.remove('active'));
-                
-                document.getElementById('secretLink').classList.add('active');
-                document.getElementById('secret').classList.add('active');
-            });
-            
-            // 秘密信封点击事件
-            document.getElementById('secretEnvelope').addEventListener('click', function() {
-                // 隐藏信封
-                this.style.display = 'none';
-                
-                // 显示秘密内容
-                document.getElementById('secretContent').style.display = 'block';
-                
-                // 添加动画效果
-                document.getElementById('secretContent').style.opacity = '0';
-                document.getElementById('secretContent').style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    document.getElementById('secretContent').style.transition = 'opacity 1s ease, transform 1s ease';
-                    document.getElementById('secretContent').style.opacity = '1';
-                    document.getElementById('secretContent').style.transform = 'translateY(0)';
-                }, 100);
-            });
-            
-            // 为所有可点击元素添加回弹效果
-            const interactiveElements = document.querySelectorAll('.wish-card, .floating-element, .control-btn, .song-item, .countdown-item');
-            interactiveElements.forEach(el => {
-                el.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 200);
-                });
-            });
-            
-            // 页面点击事件，解决音频自动播放问题
-            document.body.addEventListener('click', function() {
-                // 如果音频是暂停状态，尝试播放一下然后暂停
-                if (audio.paused && !isPlaying) {
-                    audio.play().then(() => {
-                        audio.pause();
-                    }).catch(e => {
-                        console.log("音频预加载失败:", e);
-                    });
-                }
-            }, { once: true });
-        });
-        
-        // 页面加载时的动画
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
-            
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-    </script>
-</body>
-</html>
+        // 粒子背景效果
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 
