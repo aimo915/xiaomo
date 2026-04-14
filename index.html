@@ -1005,9 +1005,9 @@
     </style>
 </head>
 <body>
-    <!-- 爱心特效容器 -->
+    <!-- 特效容器 -->
     <div id="heartEgg"></div>
-    <button id="closeHeart">关闭爱心</button>
+    <button id="closeHeart">关闭特效</button>
 
     <div class="container">
         <!-- 顶部导航（整齐布局） -->
@@ -1017,9 +1017,9 @@
                 <span>专属生日祝福</span>
             </div>
             <div class="header-right">
-                <!-- 爱心特效开关 -->
+                <!-- 特效开关 -->
                 <label class="effect-toggle">
-                    <span>爱心特效</span>
+                    <span>特效</span>
                     <label class="toggle-switch">
                         <input type="checkbox" id="heartToggle" checked>
                         <span class="toggle-slider"></span>
@@ -1219,10 +1219,10 @@
                 
                 <div class="password-section" id="passwordSection">
                     <div class="password-input">
-                        <input type="password" id="privatePassword" placeholder="请输入密码（0423/423）">
+                        <input type="password" id="privatePassword" placeholder="请输入密码（密码你猜对我就告诉你）">
                         <button class="submit-btn" id="submitPrivatePassword">进入相册</button>
                         <p class="password-hint" id="passwordHint">点击查看密码提示</p>
-                        <p class="password-hint-egg" id="passwordHintEgg">🥚 彩蛋提示：密码和你的生日有关哦（4位数字）</p>
+                        <p class="password-hint-egg" id="passwordHintEgg"> 提示：密码和你的生日有关哦</p>
                         <p class="password-error" id="passwordError">密码错误，请重试（正确密码：0423 或 423）</p>
                     </div>
                 </div>
@@ -1261,7 +1261,7 @@
                 <!-- 彩蛋内容（完全还原你的文案） -->
                 <div class="secret-content" id="secretContent">
                     <div class="secret-message">
-                        <h3>致最可爱的梓怡同学：</h3>
+                        <h3>致梓怡同学：</h3>
                         <p>当你看到这份彩蛋时，说明又迎来了属于你的特别日子。愿这个生日成为你人生中最美好的回忆之一，愿你被世界温柔以待，被幸福紧紧包围。</p>
                         <p>新的一岁，愿你：</p>
                         <p>✨ 眼里有光，心中有爱，脚下有路</p>
@@ -1282,7 +1282,7 @@
     </div>
 
     <script>
-        // 全局变量：爱心特效开关状态
+        // 全局变量：特效开关状态
         let heartEffectEnabled = true;
         
         // 初始化开关状态
@@ -1326,7 +1326,7 @@
             if (hintClickCount === 1) {
                 passwordHintEgg.style.display = 'block';
             } else if (hintClickCount === 2) {
-                passwordHintEgg.textContent = '🥚 再提示一下：是你的生日日期哦（4位数字，比如0423）';
+                passwordHintEgg.textContent = '🥚 再提示一下：是你的生日日期哦';
             } else if (hintClickCount === 3) {
                 passwordHintEgg.textContent = '🥚 终极提示：423？不对的话试试0423～';
             }
@@ -1471,7 +1471,7 @@
             }
         });
 
-        // 核心：爱心特效（分散显示+透明背景）
+        // 核心：特效（分散显示+透明背景）
         const heartContainer = document.getElementById('heartEgg');
         const closeBtn = document.getElementById('closeHeart');
         const words = [
@@ -1493,7 +1493,7 @@
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
             
-            // 爱心大小缩小（手机端更小）
+            // 大小缩小（手机端更小）
             let size;
             if (windowWidth < 768) {
                 size = isMini ? 15 : 20; // 手机端：迷你15，全屏20
@@ -1558,7 +1558,7 @@
             }
         }
 
-        // 关闭爱心特效
+        // 关闭特效
         closeBtn.addEventListener('click', () => {
             heartContainer.style.display = 'none';
             closeBtn.style.display = 'none';
